@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Трекер звичок (AJAX)</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+        input, button { padding: .5rem; font-size: 1rem; }
+        #search { width: 100%; box-sizing: border-box; margin-bottom: 1rem; }
+        #add-form { display: flex; gap: .5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        #add-form input[name="name"] { flex: 1; min-width: 160px; }
+        .card { border: 1px solid #ccc; border-radius: 8px; padding: .75rem 1rem; margin-bottom: .75rem;
+                display: flex; justify-content: space-between; align-items: center; }
+        .card h3 { margin: 0 0 .25rem; }
+        .streak { font-weight: bold; }
+        .message { padding: .75rem; border-radius: 6px; background: #fdecea; color: #b71c1c; }
+        .empty { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Трекер звичок</h1>
+
+    <form id="add-form">
+        <input type="text" name="name" placeholder="Назва звички" required>
+        <input type="number" name="target_per_week" placeholder="Раз на тиждень" min="1" max="7" required>
+        <button type="submit">Додати</button>
+    </form>
+
+    <input type="text" id="search" placeholder="Пошук за назвою...">
+
+    <div id="results"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
